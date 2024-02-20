@@ -21,15 +21,15 @@ public class Person {
         String name = sc.next();
         this.name = name;
     }
-    public void setHeight(double height){
+    /*public void setHeight(double height){
         this.height = height;
-    }
+    }*/
     public double getHeight() {
         return this.height;
     }
-    /*public void createHeight(){
+    public void createHeight(){
         this.height = (Math.random()*50)+150;
-    }*/
+    }
     /*public void setWeight(double weight){
         this.weight = weight;
     }*/

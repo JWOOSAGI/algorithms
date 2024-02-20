@@ -8,7 +8,7 @@ public class KaupView {
         //Scanner sc = new Scanner(System.in);
         //System.out.printf("이름 입력 : ");
         //String name = sc.next();
-        double mainHeight = (Math.random()*50)+150;
+        //double mainHeight = (Math.random()*50)+150;
         //double mainWeight = (Math.random()*69)+30;
         /*String bmiResult = "";
 
@@ -29,21 +29,21 @@ public class KaupView {
         Person person = new Person();
 
         /*person.setName(name);
-        System.out.println("이름 : "+person.getName());*/
+        System.out.println("이름 : "+person.getName());
 
         person.setHeight(mainHeight);
         System.out.println("키 : " + (int)person.getHeight() + "cm");
 
-       /* person.setWeight(mainWeight);
+        person.setWeight(mainWeight);
         System.out.println("몸무게 : " + (int)person.getWeight() + "kg");*/
 
         person.createName();
         String name = person.getName();
         System.out.println("이름 : "+person.getName());
 
-        /*person.createHeight();
+        person.createHeight();
         double height = person.getHeight();
-        System.out.println("키 : "+(int)person.getHeight());*/
+        System.out.println("키 : "+(int)person.getHeight());
 
         person.createWeight();
         double weight = person.getWeight();
