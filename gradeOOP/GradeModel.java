@@ -7,6 +7,8 @@ public class GradeModel {
     private int math;
     private int avg;
 
+    public GradeModel(String userName){}
+
     public String getUserName(){
         return this.userName;
     }

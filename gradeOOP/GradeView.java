@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class GradeView {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        GradeModel model = new GradeModel();
+        GradeModel model = new GradeModel(sc.next());
 
         System.out.println("다음은 한 학생의 과목 점수이다.");
 

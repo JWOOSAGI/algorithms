@@ -13,17 +13,34 @@ public class Calculator {
         int intNum1 = Integer.parseInt(first);
         int intNum2 = Integer.parseInt(second);
 
-        if (opcode.equals("+")) {
-            result = intNum1 + intNum2;
-        } else if (opcode.equals("-")) {
-            result = intNum1 - intNum2;
-        } else if (opcode.equals("*")) {
-            result = intNum1 * intNum2;
-        } else if (opcode.equals("/")) {
-            result = intNum1 / intNum2;
-        } else {
-            System.out.println("잘못된 연산기호 입니다.");
-            return;
+//        if (opcode.equals("+")) {
+//            result = intNum1 + intNum2;
+//        } else if (opcode.equals("-")) {
+//            result = intNum1 - intNum2;
+//        } else if (opcode.equals("*")) {
+//            result = intNum1 * intNum2;
+//        } else if (opcode.equals("/")) {
+//            result = intNum1 / intNum2;
+//        } else {
+//            System.out.println("잘못된 연산기호 입니다.");
+//            return;
+//        }
+
+        switch (opcode) {
+            case "+":
+                result = intNum1 + intNum2;
+                break;
+            case "-":
+                result = intNum1 - intNum2;
+                break;
+            case "*":
+                result = intNum1 * intNum2;
+                break;
+            case "/":
+                result = intNum1 / intNum2;
+                break;
+            default:
+                System.out.println("잘못된 연산자");
         }
 
 
