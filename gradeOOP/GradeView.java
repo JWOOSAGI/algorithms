@@ -12,7 +12,7 @@ public class GradeView {
 
         System.out.printf("이름 : ");
         String name = sc.next();
-        model.setUserName(name);
+        model.setUserName(sc.next());
 
         System.out.printf("국어점수 : ");
         int kor = sc.nextInt();
