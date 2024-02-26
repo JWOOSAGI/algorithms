@@ -18,11 +18,11 @@ public class Dwarf {
         }
         Arrays.sort(heights); //키를 오름순서로 정렬
 
-        for(int a = 0; a < heights.length-1; a++) { //브루트 포스
-            for(int b = a+1; b < heights.length; b++) {
-                if(sum - heights[a] - heights[b] == 100) { //핵심
-                    fakeA = a;
-                    fakeB = b;
+        for(int i = 0; i < heights.length-1; i++) { //브루트 포스
+            for(int j = i+1; j < heights.length; j++) {
+                if(sum - heights[i] - heights[j] == 100) { //핵심
+                    fakeA = i;
+                    fakeB = j;
                     break;
                 }
             }
@@ -33,6 +33,5 @@ public class Dwarf {
                 continue;
             System.out.println(heights[j]);
         }
-        sc.close();
     }
 }

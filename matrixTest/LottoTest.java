@@ -16,23 +16,52 @@ import java.util.Random;
  * */
 public class LottoTest {
     public static void main(String[] args) {
-        // 1 ~ 45 범위 내의 서로 겹치지 않는 숫자 6개를 생성
+        IBuyLotto buy = new BuyLotto();
+        ILottoDraw draw = new LottoDraw();
+        ILottoMatch match = new LottoMatch();
+
+        // 로또 구입
+
         int[] arr = new int[6];
-        // 중복되지 않은 상태
-        arr = createArrayWithoutDuplicates(arr);
-        // 오름차순 정렬
-        arr = sortAscending(arr);
-        // 출력
-        printLotto(arr);
+        arr = draw.createArrayWithoutDuplicates(arr);
+        arr = draw.sortAscending(arr);
+        draw.printLotto(arr);
+
+        // 구입한 로또와 추첨한 로또의 일치여부 체크
+
     }
 
-    private static void printLotto(int[] arr) {
+
+}
+interface IBuyLotto{ int[] buyLotto();}
+interface ILottoDraw{
+    int createRandomNumber(int start, int end);
+    int[] createArrayWithoutDuplicates(int[] arr);
+    int[] sortAscending(int[] arr);
+    void printLotto(int[] arr);
+}
+interface ILottoMatch{
+    int findSame(int[] originLotto, int[] myLotto);
+    String rank(int count);
+}
+class BuyLotto implements IBuyLotto{
+
+    @Override
+    public int[] buyLotto() {
+        return new int[0];
+    }
+}
+class LottoDraw implements ILottoDraw{
+
+    @Override
+    public void printLotto(int[] arr) {
         for(int i =0; i< arr.length; i++){
             System.out.printf("%d \t", arr[i]);
         }
     }
 
-    private static int[] sortAscending(int[] arr) {
+    @Override
+    public int[] sortAscending(int[] arr) {
         // 버블 정렬이 들어갈 부분
         for(int i=0; i< arr.length;i++){
             for(int j=0; j < arr.length -1; j++){
@@ -46,7 +75,8 @@ public class LottoTest {
         return arr;
     }
 
-    private static int[] createArrayWithoutDuplicates(int[] arr) {
+    @Override
+    public int[] createArrayWithoutDuplicates(int[] arr) {
         for(int i=0; i<6; i++){
             int randomNumber = createRandomNumber(1,45);
             boolean check = false;
@@ -66,10 +96,22 @@ public class LottoTest {
         return arr;
     }
 
-    private static int createRandomNumber(int start, int end) {
+    @Override
+    public int createRandomNumber(int start, int end) {
         Random random = new Random();
         return random.nextInt(end)+start;
     }
 
+}
+class LottoMatch implements ILottoMatch{
+    @Override
+    public int findSame(int[] originLotto, int[] myLotto){
+        return 0;
+    }
+
+    @Override
+    public String rank(int count) {
+        return null;
+    }
 
 }
