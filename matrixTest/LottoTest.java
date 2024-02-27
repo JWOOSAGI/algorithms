@@ -45,7 +45,6 @@ interface ILottoMatch{
     String rank(int count);
 }
 class BuyLotto implements IBuyLotto{
-
     @Override
     public int[] buyLotto() {
         return new int[0];
