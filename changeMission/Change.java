@@ -15,6 +15,5 @@ public class Change {
             }
         }
         System.out.println(change);
-        
     }
 }
