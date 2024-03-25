@@ -1,4 +1,5 @@
 package baekjoon;
+
 import java.util.Scanner;
 
 public class Main {
@@ -8,5 +9,5 @@ public class Main {
         int b = sc.nextInt();
         System.out.println(a+b);
     }
-
 }
+
