@@ -1,33 +1,20 @@
 package baekjoon;
-import java.util.*;
 
+import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String str = sc.next();
-
-        int min = Integer.MAX_VALUE;
-
-        int aCnt = 0;
-        for(int i=0; i<str.length(); i++) {
-            if(str.charAt(i) =='a') {
-                aCnt++;
-            }
+        long a = sc.nextLong();
+        long b = sc.nextLong();
+        if(b>a) {
+            System.out.println(b-a-1);
+            for(long i = a+1; i<b; i++) System.out.print(i+" ");
         }
-
-        for(int i=0; i<str.length(); i++) {
-            int bCnt = 0;
-            for(int j=i; j<i+aCnt; j++) {
-                int idx = j%str.length();
-                if(str.charAt(idx) =='b') {
-                    bCnt++;
-                }
-            }
-            min = Math.min(min, bCnt);
+        else if(a>b) {
+            System.out.println(a-b-1);
+            for(long i = b+1; i<a; i++) System.out.print(i+" ");
         }
-
-        System.out.println(min);
+        else System.out.print(0);
     }
 }
